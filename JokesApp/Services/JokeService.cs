@@ -87,11 +87,17 @@ namespace JokesApp.Services
             return false;
 
         }
-        public async Task<Joke> GetByCtegory()
+        public async Task<List<string>> GetCategoriesasync()
         {
-            List<CategoriesClass> categories = new List<CategoriesClass>();
-            
+         var response=  await httpClient.GetAsync($"{URL}categories");
 
+            if (response.IsSuccessStatusCode)
+            {
+                string jsonString = await response.Content.ReadAsStringAsync();
+                Categories cat = JsonSerializer.Deserialize<Categories>(jsonString, options);
+                return cat.CategoriesList.ToList();
+            }
+            return new List<string>();
         }
     }
 

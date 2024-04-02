@@ -59,6 +59,8 @@
                 CornerRadius="20"
                 HeightRequest="50"
                 Text="Submit Joke" />
+            <Button Command="{Binding GetCattegoeyCommand}" Text="Get Categories" />
+            <Picker ItemDisplayBinding="{Binding .}" ItemsSource="{Binding Categories}" />
         </HorizontalStackLayout>
     </Grid>
 

@@ -8,19 +8,13 @@ using System.Threading.Tasks;
 namespace JokesApp.Models
 {
 
-    public class CategoriesClass
+    public class Categories
     {
         public bool Error { get; set; }
         [JsonPropertyName("categories")]
         public string[] CategoriesList { get; set; }
-        public Categoryalias[] CategoryAliases { get; set; }
-        public long Timestamp { get; set; }
+       
     }
 
-    public class Categoryalias
-    {
-        public string alias { get; set; }
-        public string resolved { get; set; }
-    }
-
+  
 }
